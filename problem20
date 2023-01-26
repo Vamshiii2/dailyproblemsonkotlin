@@ -1,0 +1,20 @@
+//Program to find if a number is prime or not
+fun prime(a:Int):Boolean
+{
+    if(a<2) return false
+    for(i in 2..a/2)
+    {
+        if(a%i==0)
+            return false
+    }
+    return true
+}
+fun main()
+{   println("Enter the number:")
+    var a= readLine()?.toInt()!!
+    if(prime(a))
+    {
+        println("Prime number")
+    }
+    else println("Not a prime number")
+}
