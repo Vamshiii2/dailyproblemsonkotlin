@@ -1,0 +1,21 @@
+//Program to display fibonacci series
+
+//Program for fibonacci series
+fun main()
+{
+    println("Enter a number:")
+    var a= readLine()?.toInt()!!
+    var list= mutableListOf<Int>(0)
+    if(a==2) {
+        list.add(1)
+        println(list)
+    }
+    if(a>2)
+    {
+        for (i in 2..a - 1)
+            list.add(list[i - 2] + list[i - 1])
+            println(list)
+    }
+
+
+}
