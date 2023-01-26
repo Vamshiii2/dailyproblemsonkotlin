@@ -1,0 +1,14 @@
+//program to reverse a number
+fun main()
+{
+    println("Enter a number:")
+    var a= readLine()?.toInt()!!
+    var rev=0
+    while(a>0){
+        var n=a%10
+        rev=rev*10+n
+        a=a/10
+    }
+   println("The reversal of the given number is $rev")
+
+}
