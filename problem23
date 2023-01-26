@@ -1,0 +1,13 @@
+//Program to count the number of digits in a given integer
+fun main()
+{
+    println("Enter a number:")
+    var n= readLine()?.toInt()!!
+    var c=0
+    while(n>0)
+    {
+        n=n/10
+        c++
+    }
+    println("The count of digits in a given number is $c")
+}
