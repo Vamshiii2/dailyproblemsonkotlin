@@ -1,0 +1,10 @@
+//Program to reverse a given string
+fun main()
+{
+    println("Enter a string:")
+    var s= readLine()
+    var rev=s?.reversed()
+    println("The reversed string is ${rev}")
+    if(rev==s) println("It's a Palindrome")
+    else println("It's not a palindrome")
+}
