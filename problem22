@@ -1,0 +1,14 @@
+//Program to find the sum of the digit in a given integer
+fun main()
+{   println("Enter a number:")
+    var n= readLine()?.toInt()!!
+    var sum=0
+    while(n>0)
+    {
+        var digit=n%10
+        sum=sum+digit
+        n=n/10
+    }
+    println("The sum of the digits of the given number is $sum")
+
+}
