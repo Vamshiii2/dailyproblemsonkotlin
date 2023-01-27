@@ -1,0 +1,13 @@
+import kotlin.math.sqrt
+
+//Program to check if the given is a perfect square or not
+fun main()
+{
+    println("Enter a number:")
+    var n= readLine()?.toDouble()!!
+    var s=sqrt(n)
+    var i=Math.floor(s)
+    if(s==i)  println("The given number is a perfect square")
+    else    println("The given number is not a perfect square")
+
+}
