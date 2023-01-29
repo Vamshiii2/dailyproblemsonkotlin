@@ -1,0 +1,19 @@
+//To check if the given number is Armstrong number or not
+fun main()
+    {   
+      println("Enter a number:")
+        var a= readLine()?.toInt()!!
+        var sum=0
+        var temp=a
+        while(a!=0) {
+            var d = a % 10
+            var e = d * d * d
+            sum = sum + e
+            a = a / 10
+        }
+        println("$sum")
+        if(temp==sum)//Here 'a' cannot be compared with sum as 'a' value gets updated to 0 at the end so we assign 'a' to temp and compare with temp
+            println("Its an Armstrong Number")
+        else
+            println("Not an Armstrong Number")
+    }
