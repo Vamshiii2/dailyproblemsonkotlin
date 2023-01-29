@@ -1,0 +1,14 @@
+//Program to calculate power of a number
+fun main()
+{   println("Enter the base:")
+    var b= readLine()?.toInt()!!
+    println("Enter the exponent:")
+    var e= readLine()?.toInt()!!
+    var a=1
+    while(e!= 0)
+    {
+        a*=b
+        --e
+    }
+    println("The power of the given number is $a")
+}
