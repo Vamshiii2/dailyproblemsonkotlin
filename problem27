@@ -1,0 +1,15 @@
+//Frequency of occurence of a character in the given string
+fun main()
+{   println("Enter a string:")
+    var a= readLine()!!
+    println("Enter a character:")
+    var  b= readLine()!![0]
+    var count=0
+    for(i:Char in a)
+    {
+        if(i==b)
+            count++
+
+    }
+    println("The frequency of the character is $count")
+}
