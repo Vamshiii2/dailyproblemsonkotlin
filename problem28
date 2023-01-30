@@ -1,0 +1,35 @@
+//Program to count the vowels,consonants,space and digits in a sentence
+fun main()
+{
+    println("Enter a string:")
+    var n= readLine()!!
+    var vowel=0
+    var consonant=0
+    var digits=0
+    var space=0
+    var specialsymbols=0
+    for(i in 0..n.length-1){
+        var c=n[i]
+        if(c=='a'|| c=='e'|| c=='i'|| c=='o'|| c=='u'|| c=='A'|| c=='E'||c=='O' ||c=='I'||c=='U')
+        {
+            ++vowel
+        }
+        else if(c in '0'..'9')
+        {
+            ++digits
+        }
+        else if(c in 'a'..'z'|| c in 'A'..'Z')
+        {
+            ++consonant
+        }
+        else if(c in " ")
+        {
+            ++space
+        }
+        else
+        {
+            ++specialsymbols
+        }
+    }
+    println(" vowels=$vowel consonants= $consonant digits= $digits  space=$space special symbols=$specialsymbols")
+}
