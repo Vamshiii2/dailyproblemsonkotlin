@@ -1,0 +1,18 @@
+//Program to find the average of elements in an array
+fun main()
+{
+    println("Enter the size of the array:")
+   var size= readLine()?.toInt()!!
+    println("Enter the array elements:")
+    var array=Array(size){ readLine()?.toDouble()!! }
+    var sum=0.0
+    var avg=0.0
+    for(i in 0..array.size-1)
+    {
+        sum =sum +array[i]
+    }
+    println("The sum  is $sum")
+    avg=sum/size
+    println("The average is $avg")
+
+}
