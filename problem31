@@ -1,0 +1,20 @@
+//Program to roll the dice using random() function 
+fun main()
+{
+    val dice=Dice(12,"red")
+    println("The dice of ${dice.color} color and ${dice.sides} sided  rolled ${dice.roll()}")
+
+    val dice2=Dice(20,"yellow")
+    println("The  dice of ${dice2.color}color and ${dice2.sides} sided  rolled ${dice2.roll()}")
+
+}
+
+class Dice( val sides:Int,val color:String)
+{
+    fun roll():Int
+    {
+        val range=1..sides
+        return  range.random()
+
+    }
+}
