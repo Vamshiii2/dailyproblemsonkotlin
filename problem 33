@@ -1,0 +1,90 @@
+//Program that implements classes for different kinds of dwellings
+import kotlin.math.PI
+import kotlin.math.sqrt
+
+fun main() {
+    var sc=squareCabin(8,30.0)//instance of a class
+    var rh=roundHut(5,13.0)
+    var rt=roundTower(6,29.0)
+    with(sc){
+        println("---------SQUARE CABIN-----------")
+        println("Building material:${buildingMaterial}")
+        println("capacity:${capacity}")
+        println("has room?:${hasRoom()}")
+        getRoom()
+        println("Floor area:${floorArea()}")
+        println("--------------------")
+    }
+    
+    with(rh){
+        println("---------ROUND HUT-----------")
+        println("Building material:${buildingMaterial}")
+        println("capacity:${capacity}")
+        println("has room?:${hasRoom()}")
+        getRoom()
+        println("Carpet length:${carpetLength()}")
+        println("Floor area:${floorArea()}")
+        println("--------------------")
+        
+    }
+    
+        with(rt){
+        println("---------ROUND TOWER-----------")
+        println("Building material:${buildingMaterial}")
+        println("capacity:${capacity}")
+        println("has room?:${hasRoom()}")
+        getRoom()
+        println("Carpet length:${carpetLength()}")
+         println("Floor area:%.2f".format(floorArea()))
+        println("--------------------")
+        }
+        
+    
+}
+  abstract class Dwelling(private var residents:Int){
+      
+       abstract val  buildingMaterial:String
+       abstract  val capacity:Int
+      
+       fun hasRoom():Boolean{
+          return residents<capacity
+      }
+       abstract fun floorArea():Double
+      fun getRoom(){
+          if(capacity> residents){
+              residents=residents+1
+              println("You have a room :)")
+          }
+          else{
+              println("Sorry ,no rooms left :(")
+          }
+      }
+      
+   }
+  class squareCabin (residents :Int,val length:Double):Dwelling(residents){
+      override val buildingMaterial="Wood"
+      override val capacity=89
+      override fun floorArea():Double{
+          return length*length
+      } 
+  }
+ open class roundHut(residents:Int,val r:Double):Dwelling(residents){
+      override val buildingMaterial="Straw"
+      override val capacity=6
+     override fun floorArea():Double{
+          return PI*r*r
+      }
+     fun carpetLength():Double{
+         return sqrt(2.0)*r
+     }
+  }
+  class roundTower(residents:Int,r:Double,val floor:Int=2):roundHut(residents,r){
+     override val buildingMaterial="Stone"
+      override val capacity=3*floor
+      override fun floorArea():Double{
+          return super.floorArea()*floor
+          
+      }
+      
+      
+  }
